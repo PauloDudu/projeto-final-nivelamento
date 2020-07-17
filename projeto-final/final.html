@@ -8,7 +8,7 @@
 <body>
     <!-- 
         8.1 Crie um sistema que possa receber 5 números,ok
-        8.2 Esse sistema deve retornar para o usuário o menor e o maior número.
+        8.2 Esse sistema deve retornar para o usuário o menor e o maior número.ok
         8.3 Ele também deve informar quais são os números pares e ímpares.ok
         8.3 Ele deve retornar também se tem algum numero repetido, se sim, qual é esse número
         e quantas vezes está repetido.
@@ -21,13 +21,39 @@
         var n4 = parseInt(prompt("Digite o quarto valor:"));
         var n5 = parseInt(prompt("Digite o quinto valor:"));
 
-        valores.push(n1, n2, n3, n4, n5);        
-                
+        valores.push(n1, n2, n3, n4, n5);  
+
+         var maior = Math.max(n1, n2, n3, n4, n5);
+         var menor = Math.min(n1, n2, n3, n4, n5);
+
+        document.write(`O menor valor é ${menor} <br>`);
+        document.write(`O maior valor é ${maior} <br>`);
+
+
         for(valor of valores){                     
 
             (valor % 2 == 0 ? document.write(`${valor} - Esse valor é par <br>`) : document.write(`${valor} - Esse valor é impar <br>`));
 
+        };     
+        
+        function retornaRepetido(valores) {
+            var map = numerosArray.reduce(function(prev, cur) {
+
+            prev[cur] = (prev[cur] || 0) + 1;
+
+            return prev;
+
+            }, {});
+
+            
+            for (i in map){
+
+                document.write(`<p>O número ${i} foi repetido ${map[i]}</p>`);
+
+            };
         };
+        retornaRepetido(valores)
+
 
         
     </script>
