@@ -35,25 +35,23 @@
             (valor % 2 == 0 ? document.write(`${valor} - Esse valor é par <br>`) : document.write(`${valor} - Esse valor é impar <br>`));
 
         };     
-        
         function retornaRepetido(valores) {
-            var map = numerosArray.reduce(function(prev, cur) {
+        var map = valores.reduce(function(prev, cur) {
 
             prev[cur] = (prev[cur] || 0) + 1;
 
             return prev;
 
             }, {});
-
             
-            for (i in map){
+            for (i in map) {
 
                 document.write(`<p>O número ${i} foi repetido ${map[i]}</p>`);
 
             };
         };
-        retornaRepetido(valores)
 
+        retornaRepetido(valores);
 
         
     </script>
